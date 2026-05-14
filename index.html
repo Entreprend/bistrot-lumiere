@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Le Bistrot Lumière — Restaurant Gastronomique · Paris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-item">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      12 Rue de la Paix, 75006 Paris
+    </span>
+    <span class="topbar-item">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Mar–Ven 12h–14h30 · 19h–22h30 · Sam–Dim 19h–23h
+    </span>
+    <span class="topbar-item">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.21 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      +33 1 42 33 44 55
+    </span>
+    <span class="topbar-item">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+      contact@bistrot-lumiere.fr
+    </span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-main">Bistrot Lumière</span>
+      <span class="logo-sub">Paris · Gastronomique</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Accueil</a></li>
+      <li><a href="#menu">La Carte</a></li>
+      <li><a href="#about">Notre Histoire</a></li>
+      <li><a href="#reservation">Réservation</a></li>
+      <li><a href="#events">Événements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#reservation" class="nav-btn">Réserver une Table</a>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#home" onclick="closeMobile()">Accueil</a>
+  <a href="#menu" onclick="closeMobile()">La Carte</a>
+  <a href="#about" onclick="closeMobile()">Notre Histoire</a>
+  <a href="#reservation" onclick="closeMobile()">Réservation</a>
+  <a href="#events" onclick="closeMobile()">Événements</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#reservation" class="nav-btn" onclick="closeMobile()">Réserver</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-tag"><span class="ornament">◆</span> Gastronomique & Authentique <span class="ornament">◆</span></p>
+    <h1 class="hero-title">Notre <em>Carte</em><br>d'Exception</h1>
+    <p class="hero-desc">Chaque assiette raconte une histoire. Chaque saison, de nouveaux chefs-d'œuvre culinaires élaborés avec les meilleurs producteurs français.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-accent">Découvrir la Carte</a>
+      <a href="#reservation" class="btn-ghost">Réserver une Table</a>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <div class="scroll-bar"></div>
+    <span>Défiler</span>
+  </div>
+</section>
+
+<!-- MENU SECTION -->
+<section id="menu" class="menu-section">
+
+  <!-- ENTRÉES -->
+  <div class="menu-block">
+    <div class="menu-header">
+      <p class="menu-tag"><span class="ornament-line"></span>Menu Entrées<span class="ornament-line"></span></p>
+      <h2 class="menu-title">Nos <em>Entrées</em></h2>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-entree1"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Tartare de Saint-Jacques</h3>
+            <span class="menu-price">28€</span>
+          </div>
+          <p>Caviar d'Aquitaine, émulsion yuzu, herbes fraîches et vinaigrette de citron vert.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-entree2"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Foie Gras Maison</h3>
+            <span class="menu-price">32€</span>
+          </div>
+          <p>Chutney de figues et épices, brioche toastée au beurre noisette, fleur de sel.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-entree3"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Velouté de Truffe Noire</h3>
+            <span class="menu-price">36€</span>
+          </div>
+          <p>Crème légère infusée, copeaux de truffe noire du Périgord, huile de truffe.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-entree4"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Burrata Héritage</h3>
+            <span class="menu-price">22€</span>
+          </div>
+          <p>Tomates anciennes multicolores, pesto de basilic frais, huile d'olive Lucques.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-entree5"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Soupe à l'Oignon Gratinée</h3>
+            <span class="menu-price">18€</span>
+          </div>
+          <p>Recette traditionnelle du chef, comté affiné 18 mois, bouillon de bœuf maison.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-entree6"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Œuf Parfait & Morilles</h3>
+            <span class="menu-price">26€</span>
+          </div>
+          <p>Œuf cuit à 63°C, morilles sautées au beurre, crème de parmesan, mouillettes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SÉPARATEUR -->
+  <div class="section-divider">
+    <span class="ornament">◆</span>
+  </div>
+
+  <!-- PLATS -->
+  <div class="menu-block" id="plats">
+    <div class="menu-header">
+      <p class="menu-tag"><span class="ornament-line"></span>Plats Principaux<span class="ornament-line"></span></p>
+      <h2 class="menu-title">Nos <em>Plats</em></h2>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-plat1"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Sole Meunière Classique</h3>
+            <span class="menu-price">54€</span>
+          </div>
+          <p>Beurre noisette, câpres, citron confit, persil frisé, légumes de saison.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-plat2"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Filet de Bœuf Rossini</h3>
+            <span class="menu-price">68€</span>
+          </div>
+          <p>Foie gras poêlé, sauce Périgueux à la truffe, pommes sarladaises dorées.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-plat3"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Pigeon de Vendée Rôti</h3>
+            <span class="menu-price">58€</span>
+          </div>
+          <p>Jus corsé aux herbes, petits pois à la française, lard fumé, oignons grelots.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-plat4"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Risotto au Homard Breton</h3>
+            <span class="menu-price">62€</span>
+          </div>
+          <p>Bisque réduite maison, médaillons de homard bleu, estragon et parmesan.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-plat5"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Agneau de Lozère en Croûte</h3>
+            <span class="menu-price">56€</span>
+          </div>
+          <p>Croûte de pistaches et herbes, jus d'agneau, gratin dauphinois traditionnel.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-plat6"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Dos de Cabillaud Rôti</h3>
+            <span class="menu-price">48€</span>
+          </div>
+          <p>Vierge de tomates cerises, tapenade maison, légumes méditerranéens confits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SÉPARATEUR -->
+  <div class="section-divider">
+    <span class="ornament">◆</span>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="menu-block" id="desserts">
+    <div class="menu-header">
+      <p class="menu-tag"><span class="ornament-line"></span>Douceurs Sucrées<span class="ornament-line"></span></p>
+      <h2 class="menu-title">Nos <em>Desserts</em></h2>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-dessert1"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Soufflé au Grand Marnier</h3>
+            <span class="menu-price">18€</span>
+          </div>
+          <p>Soufflé chaud maison, glace vanille Bourbon de Madagascar, tuile dentelle.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-dessert2"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Millefeuille Caramel Beurre</h3>
+            <span class="menu-price">16€</span>
+          </div>
+          <p>Feuilletage inversé caramélisé, crème légère au caramel beurre salé breton.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-dessert3"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Crème Brûlée Fève Tonka</h3>
+            <span class="menu-price">14€</span>
+          </div>
+          <p>Infusion fève tonka, sucre muscovado caramélisé, fruits rouges de saison.</p>
+        </div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-item-img">
+          <div class="img-circle img-dessert4"></div>
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-top">
+            <h3>Tarte Citron Meringuée</h3>
+            <span class="menu-price">15€</span>
+          </div>
+          <p>Curd yuzu et citron de Menton, meringue italienne flambée, sablé breton.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- PRIVATE EVENTS -->
+<section class="events-section" id="events">
+  <div class="events-inner">
+    <div class="events-text">
+      <p class="section-tag"><span class="ornament-line"></span>Événements Privés<span class="ornament-line"></span></p>
+      <h2>Une <em>Soirée</em><br>Inoubliable</h2>
+      <p>Anniversaires, dîners d'affaires, cérémonies de mariage — notre équipe vous accompagne dans la conception d'un événement sur mesure, dans un cadre d'exception au cœur de Paris.</p>
+      <ul class="events-list">
+        <li><span class="check">◆</span> Salle privatisable jusqu'à 80 couverts</li>
+        <li><span class="check">◆</span> Menu dégustation personnalisé</li>
+        <li><span class="check">◆</span> Sommelier dédié pour l'accord mets-vins</li>
+        <li><span class="check">◆</span> Service traiteur disponible hors les murs</li>
+      </ul>
+      <a href="#contact" class="btn-accent">Nous Contacter</a>
+    </div>
+    <div class="events-image">
+      <div class="events-img-box">
+        <div class="events-img-inner img-event"></div>
+        <div class="events-badge">
+          <span class="badge-num">37</span>
+          <span class="badge-txt">ans<br>d'excellence</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div class="about-img-side">
+      <div class="about-img-stack">
+        <div class="about-img-main img-chef"></div>
+        <div class="about-img-overlay">
+          <p class="overlay-quote">"La cuisine est l'art de transformer des produits simples en émotions durables."</p>
+          <p class="overlay-author">— Chef Alain Moreau</p>
+        </div>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="section-tag"><span class="ornament-line"></span>Notre Histoire<span class="ornament-line"></span></p>
+      <h2>Une Passion<br><em>Transmise</em></h2>
+      <p class="about-lead">Fondé en 1987 par le Chef Alain Moreau, Le Bistrot Lumière est l'une des adresses gastronomiques les plus confidentielles et les plus prisées du 6ème arrondissement.</p>
+      <p>Récompensé par deux étoiles au Guide Michelin, notre restaurant défend une cuisine française authentique et audacieuse, ancrée dans les saisons et les terroirs. Chaque jour, nos équipes travaillent avec des producteurs locaux sélectionnés pour leur engagement envers l'excellence.</p>
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="stat-n">2</span>
+          <span class="stat-l">Étoiles Michelin</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-n">37</span>
+          <span class="stat-l">Ans d'histoire</span>
+        </div>
+        <div class="about-stat">
+          <span class="stat-n">100%</span>
+          <span class="stat-l">Produits français</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉSERVATION -->
+<section class="resa-section" id="reservation">
+  <div class="resa-inner">
+    <div class="resa-text">
+      <p class="section-tag light"><span class="ornament-line light"></span>Réservation<span class="ornament-line light"></span></p>
+      <h2 class="light">Réservez<br>Votre <em>Table</em></h2>
+      <p class="light-muted">Nous vous accueillons du mardi au dimanche. Pour les groupes de plus de 8 personnes ou les événements privés, contactez-nous directement.</p>
+      <div class="resa-contact-links">
+        <a href="tel:+33142334455">+33 1 42 33 44 55</a>
+        <a href="mailto:contact@bistrot-lumiere.fr">contact@bistrot-lumiere.fr</a>
+      </div>
+    </div>
+    <form class="resa-form" onsubmit="handleResa(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Prénom & Nom</label>
+          <input type="text" placeholder="Marie Dupont" required/>
+        </div>
+        <div class="form-group">
+          <label>Téléphone</label>
+          <input type="tel" placeholder="+33 6 00 00 00 00"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="marie@exemple.fr" required/>
+        </div>
+        <div class="form-group">
+          <label>Nombre de couverts</label>
+          <select required>
+            <option value="" disabled selected>Sélectionner</option>
+            <option>1 personne</option>
+            <option>2 personnes</option>
+            <option>3 personnes</option>
+            <option>4 personnes</option>
+            <option>5 personnes</option>
+            <option>6 personnes</option>
+            <option>7 personnes et plus</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Date souhaitée</label>
+          <input type="date" required/>
+        </div>
+        <div class="form-group">
+          <label>Service</label>
+          <select required>
+            <option value="" disabled selected>Choisir un service</option>
+            <option>Déjeuner — 12h00</option>
+            <option>Déjeuner — 13h00</option>
+            <option>Déjeuner — 13h30</option>
+            <option>Dîner — 19h00</option>
+            <option>Dîner — 19h30</option>
+            <option>Dîner — 20h00</option>
+            <option>Dîner — 20h30</option>
+            <option>Dîner — 21h00</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group full">
+        <label>Occasion spéciale ou demande particulière</label>
+        <textarea placeholder="Anniversaire, allergie, demande en mariage…" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Confirmer la Réservation</button>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer id="contact">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <p class="footer-logo">Bistrot Lumière</p>
+      <p class="footer-tagline">Une cuisine d'exception, une âme parisienne.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="TripAdvisor">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#home">Accueil</a>
+      <a href="#menu">La Carte</a>
+      <a href="#about">Notre Histoire</a>
+      <a href="#events">Événements</a>
+      <a href="#reservation">Réservation</a>
+    </div>
+    <div class="footer-col">
+      <h4>Horaires</h4>
+      <p>Mardi – Vendredi</p>
+      <p class="muted">12h00 – 14h30 · 19h00 – 22h30</p>
+      <p>Samedi – Dimanche</p>
+      <p class="muted">19h00 – 23h00</p>
+      <p class="muted" style="margin-top:8px">Fermé le lundi</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>12 Rue de la Paix</p>
+      <p class="muted">75006 Paris</p>
+      <a href="tel:+33142334455">+33 1 42 33 44 55</a>
+      <a href="mailto:contact@bistrot-lumiere.fr">contact@bistrot-lumiere.fr</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Le Bistrot Lumière · Paris · Tous droits réservés</p>
+    <p>Site réalisé avec IA · <a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></p>
+  </div>
+</footer>
+
+<!-- CHATBOT -->
+<div id="chat-widget">
+  <div id="chat-panel" class="chat-closed">
+    <div class="chat-header">
+      <div class="chat-avatar">✦</div>
+      <div>
+        <p class="chat-bot-name">Lumière — Assistante IA</p>
+        <p class="chat-bot-status">● En ligne · Répond instantanément</p>
+      </div>
+      <button class="chat-close" onclick="toggleChat()" aria-label="Fermer">✕</button>
+    </div>
+    <div class="chat-body" id="chat-body"></div>
+    <div class="chat-typing" id="chat-typing">
+      <span></span><span></span><span></span>
+      <p>Lumière rédige...</p>
+    </div>
+    <div class="chat-quick" id="chat-quick">
+      <button onclick="qask('Vos horaires d\'ouverture ?')">Horaires</button>
+      <button onclick="qask('Comment réserver une table ?')">Réservation</button>
+      <button onclick="qask('Avez-vous un menu végétarien ?')">Végétarien</button>
+      <button onclick="qask('Prix moyen par personne ?')">Tarifs</button>
+    </div>
+    <div class="chat-input-bar">
+      <input type="text" id="chat-input" placeholder="Votre question…" onkeydown="if(event.key==='Enter')sendChat()"/>
+      <button onclick="sendChat()" aria-label="Envoyer">➤</button>
+    </div>
+    <p class="chat-powered">Propulsé par Claude IA · Clé API requise en production</p>
+  </div>
+  <button id="chat-fab" onclick="toggleChat()" aria-label="Assistant IA">
+    <span class="fab-icon">✦</span>
+    <span class="fab-label">Assistance</span>
+  </button>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
