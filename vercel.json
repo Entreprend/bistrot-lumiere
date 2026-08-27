@@ -10,6 +10,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "{robots.txt,sitemap.xml}",
+      "use": "@vercel/static"
+    },
+    {
       "src": "css/**",
       "use": "@vercel/static"
     },

@@ -138,20 +138,96 @@ async function sendChat() {
   quick.style.display = 'flex';
 }
 
-/* ── ANIMATION AU SCROLL (entrée des éléments) ── */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-      observer.unobserve(entry.target);
+/* ── TÉMOIGNAGES — défilement infini ── */
+const temoignages = [
+  {
+    initiale: 'A', prenom: 'Antoine L.', note: 5,
+    texte: "Une cave exceptionnelle et une cuisine qui respecte les saisons. Le sommelier nous a guidés avec passion. À refaire."
+  },
+  {
+    initiale: 'M', prenom: 'Marie C.', note: 5,
+    texte: "Dîner romantique parfait. L'accord mets-vins proposé par le chef était remarquable. Cadre intime et chaleureux."
+  },
+  {
+    initiale: 'P', prenom: 'Pierre D.', note: 5,
+    texte: "Meilleure sélection de vins naturels que j'ai trouvée à Paris. La carte change selon les saisons, c'est rafraîchissant."
+  },
+  {
+    initiale: 'S', prenom: 'Sophie R.', note: 4,
+    texte: "Excellent rapport qualité-prix pour un restaurant de ce standing. Service attentionné et discret."
+  },
+  {
+    initiale: 'J', prenom: 'Jean-Marc B.', note: 5,
+    texte: "Le foie gras maison et le Saint-Émilion 2019 — une combinaison inoubliable. Nous reviendrons certainement."
+  }
+];
+
+const temoignagesTrack = document.getElementById('temoignages-track');
+if (temoignagesTrack) {
+  const buildCard = (t) => {
+    const card = document.createElement('article');
+    card.className = 'temoignage-card';
+
+    let stars = '';
+    for (let s = 1; s <= 5; s++) {
+      stars += s <= t.note ? '★' : '<span class="dim">★</span>';
+    }
+
+    card.innerHTML =
+      '<div class="temoignage-head">' +
+        '<span class="temoignage-ava" aria-hidden="true">' + t.initiale + '</span>' +
+        '<div>' +
+          '<p class="temoignage-name">' + t.prenom + '</p>' +
+          '<p class="temoignage-stars" aria-label="Note : ' + t.note + ' sur 5">' + stars + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<p class="temoignage-text">' + t.texte + '</p>';
+    return card;
+  };
+
+  // Deux séries identiques pour une boucle sans couture (translateX -50%)
+  for (let pass = 0; pass < 2; pass++) {
+    temoignages.forEach(t => temoignagesTrack.appendChild(buildCard(t)));
+  }
+}
+
+/* ── FAQ — accordion ── */
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      const q = i.querySelector('.faq-question');
+      if (q) q.setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
     }
   });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.menu-item, .info-card, .about-stat, .events-list li').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(16px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
 });
+
+/* ── ANIMATION AU SCROLL (entrée des éléments) ── */
+const revealTargets = document.querySelectorAll(
+  '.menu-item, .section-divider, .events-inner, .about-inner, .temoignage-card, .faq-item'
+);
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('animate-hidden');
+        entry.target.classList.add('animate-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealTargets.forEach(el => {
+    el.classList.add('animate-hidden');
+    observer.observe(el);
+  });
+} else {
+  revealTargets.forEach(el => el.classList.add('animate-visible'));
+}

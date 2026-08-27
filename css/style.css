@@ -657,69 +657,183 @@ nav {
 
 /* ─── FOOTER ─── */
 footer {
-  background: var(--black);
+  background: var(--dark);
   border-top: 1px solid var(--border);
 }
-.footer-top {
+.footer-inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 48px;
+  padding: 72px 48px;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr 1fr;
   gap: 48px;
 }
 .footer-logo {
+  display: block;
   font-family: var(--ff-display);
   font-size: 22px;
   color: var(--olive-l);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
-.footer-tagline {
+.footer-brand p {
   font-size: 12px;
   color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 4px;
+}
+.footer-brand p:first-of-type {
   font-style: italic;
-  margin-bottom: 24px;
-  line-height: 1.7;
+  margin-bottom: 14px;
 }
-.footer-social { display: flex; gap: 14px; }
-.footer-social a {
-  color: var(--muted);
-  transition: color 0.2s;
-}
-.footer-social a:hover { color: var(--olive-l); }
-.footer-col h4 {
-  font-size: 9px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--olive);
-  margin-bottom: 16px;
-}
-.footer-col a,
-.footer-col p {
+.footer-brand a,
+.footer-links a,
+.footer-horaires p {
   display: block;
   font-size: 12px;
   color: var(--muted);
   padding: 4px 0;
-  transition: color 0.2s;
   line-height: 1.8;
+  transition: color 0.2s;
 }
-.footer-col a:hover { color: var(--cream); }
-.footer-col p.muted { opacity: 0.6; font-size: 11px; }
+.footer-brand a:hover,
+.footer-links a:hover { color: var(--cream); }
+.footer-links { display: flex; flex-direction: column; }
 .footer-bottom {
   border-top: 1px solid var(--border2);
   padding: 20px 48px;
   max-width: 1280px;
   margin: 0 auto;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ─── TÉMOIGNAGES ─── */
+.temoignages-section {
+  background: var(--dark2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 100px 0;
+}
+.temoignages-section .menu-header { margin-bottom: 56px; padding: 0 24px; }
+.temoignages-viewport {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.temoignages-track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  padding: 10px 12px;
+  animation: temoignagesScroll 35s linear infinite;
+}
+.temoignages-viewport:hover .temoignages-track { animation-play-state: paused; }
+.temoignage-card {
+  flex: 0 0 360px;
+  max-width: 360px;
+  background: var(--dark3);
+  border: 1px solid var(--border);
+  padding: 28px 30px;
+}
+.temoignage-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.temoignage-ava {
+  flex: none;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--olive);
+  color: var(--dark);
+  font-family: var(--ff-display);
+  font-size: 18px;
+}
+.temoignage-name {
+  font-family: var(--ff-display);
+  font-size: 15px;
+  color: var(--cream);
+  line-height: 1.2;
+}
+.temoignage-stars {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--olive-l);
+}
+.temoignage-stars .dim { color: var(--border); }
+.temoignage-text {
+  font-size: 13px;
+  color: var(--cream-d);
+  opacity: 0.85;
+  line-height: 1.75;
+}
+@keyframes temoignagesScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── FAQ ─── */
+.faq-section {
+  background: var(--dark);
+  padding: 100px 48px;
+}
+.faq-inner { max-width: 760px; margin: 0 auto; }
+.faq-section .menu-header { margin-bottom: 48px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  font-size: 11px;
-  color: var(--muted);
-  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+  padding: 22px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--cream);
+  transition: color 0.2s;
 }
-.footer-bottom a { color: var(--muted); transition: color 0.2s; }
-.footer-bottom a:hover { color: var(--olive-l); }
+.faq-question:hover { color: var(--olive-l); }
+.faq-question::after {
+  content: '+';
+  flex-shrink: 0;
+  font-size: 22px;
+  color: var(--olive-l);
+  transition: transform 0.3s var(--ease);
+}
+.faq-item.open .faq-question::after { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease);
+}
+.faq-answer p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+  padding-bottom: 22px;
+}
+.faq-item.open .faq-answer { max-height: 320px; }
+
+/* ─── ANIMATIONS AU SCROLL ─── */
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.animate-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-hidden { opacity: 1; transform: none; transition: none; }
+  .temoignages-track { animation: none; }
+}
 
 /* ─── CHATBOT ─── */
 #chat-widget { position: fixed; bottom: 24px; right: 24px; z-index: 1000; }
@@ -953,7 +1067,7 @@ footer {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
-  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
   .events-inner, .about-inner, .resa-inner { grid-template-columns: 1fr; gap: 48px; }
   .events-image { display: none; }
 }
@@ -967,9 +1081,12 @@ footer {
   .menu-grid .menu-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border) !important; }
   .menu-grid .menu-item:last-child { border-bottom: none !important; }
   .form-row { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px; }
-  .footer-bottom { padding: 16px 24px; flex-direction: column; text-align: center; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px; }
+  .footer-bottom { padding: 16px 24px; }
   .resa-section, .about-section, .events-section { padding: 64px 24px; }
+  .temoignages-section { padding: 64px 0; }
+  .faq-section { padding: 64px 24px; }
+  .temoignage-card { flex-basis: 280px; max-width: 280px; }
   #chat-panel { width: calc(100vw - 48px); }
   .about-img-stack { max-width: 100%; }
 }
